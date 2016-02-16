@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="9515"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Jambit_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <button width="1" alignment="left" title="Button" id="QIl-JV-DbO">
+                            <connections>
+                                <action selector="buttonTapped" destination="AgC-eL-Hgc" id="bYZ-qc-caq"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="Workout" id="ECI-L9-hRx">
+                            <connections>
+                                <segue destination="4Xq-TR-Za4" kind="push" id="1yI-la-vwK"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="button" destination="QIl-JV-DbO" id="lQF-9g-AU4"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+        <!--Pedometer Controller-->
+        <scene sceneID="J0E-6N-e04">
+            <objects>
+                <controller id="0mt-WY-ih4" customClass="PedometerController" customModule="Jambit_WatchKit_Extension">
+                    <items>
+                        <label alignment="left" text="Pedometer" id="V06-P9-dgD"/>
+                        <label alignment="left" text="steps =" id="L8y-7M-hCv"/>
+                        <label alignment="left" text="distance =" id="n1W-ml-EEq"/>
+                        <label alignment="left" text="ascended =" id="kcH-im-vyg"/>
+                        <label alignment="left" text="descended =" id="Gfx-ke-yoM"/>
+                        <label alignment="left" text="pace =" id="xmB-jh-Lu8"/>
+                    </items>
+                    <connections>
+                        <outlet property="ascendedLabel" destination="kcH-im-vyg" id="auo-go-b3m"/>
+                        <outlet property="descendedLabel" destination="Gfx-ke-yoM" id="Kv9-VE-LJi"/>
+                        <outlet property="distanceLabel" destination="n1W-ml-EEq" id="yYU-b2-ZYu"/>
+                        <outlet property="paceLabel" destination="xmB-jh-Lu8" id="ftR-JI-QqM"/>
+                        <outlet property="stepsLabel" destination="L8y-7M-hCv" id="qou-fH-oTs"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="565" y="327"/>
+        </scene>
+        <!--Heart Rate Controller-->
+        <scene sceneID="9R2-9V-hTD">
+            <objects>
+                <controller id="4Xq-TR-Za4" customClass="HeartRateController" customModule="Jambit_WatchKit_Extension">
+                    <items>
+                        <button width="1" alignment="left" title="Start Workout" id="UFH-sg-XTo">
+                            <connections>
+                                <action selector="startWorkoutButtonTapped" destination="4Xq-TR-Za4" id="I05-OR-0h0"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="End Workout" id="msN-3Z-fGH">
+                            <connections>
+                                <action selector="endWorkoutButtonTapped" destination="4Xq-TR-Za4" id="xLf-ps-uWk"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="startWorkoutButton" destination="UFH-sg-XTo" id="pNY-Hi-86y"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="398" y="354"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="Jambit_WatchKit_App" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+    </scenes>
+</document>
